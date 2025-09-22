@@ -2,10 +2,18 @@
   "name": "loldata",
   "version": "1.0.0",
   "description": "get loldata from wiki and others",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd src&& SET NODE_ENV=prod&&node --experimental-json-modules index.mjs",
+    "start:dev": "cd src&& SET NODE_ENV=dev&&node --experimental-json-modules index.mjs",
+    "start:dev:mon": "cd src&& SET NODE_ENV=dev&&nodemon --experimental-json-modules index.mjs"
   },
   "author": "Gavin Morton",
-  "license": "CC-BY-SA-3.0"
+  "license": "CC-BY-SA-3.0",
+  "dependencies": {
+    "jsdom": "^27.0.0",
+    "luaparse": "^0.3.1",
+    "nodemon": "^3.1.10"
+  }
 }
