@@ -1,0 +1,11 @@
+{
+  "name": "loldata",
+  "version": "1.0.0",
+  "description": "get loldata from wiki and others",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gavin Morton",
+  "license": "CC-BY-SA-3.0"
+}
