@@ -1,8 +1,10 @@
 import { JSDOM } from 'jsdom';
 import luaToJson from '../parsers/luaParse.mjs';
 import fs from 'fs';
+import divideJson from '../parsers/divideJson.mjs';
 
 const CHAMPION_WIKI_DATA_URL = 'https://wiki.leagueoflegends.com/en-us/Module:ChampionData/data'
+const CHAMPION_DATA_JSON_PATH = '../outputCache/championsData.json'
 
 
 const getChampions = async () => {
@@ -27,12 +29,11 @@ const getChampions = async () => {
 			lines[i] = '';
 		}
 	}
-	console.log("gonna parse`em");
 	let wikiJson = luaToJson(lines.join('\n'));
-	console.log("parsed`em");
-	fs.writeFile('../outputCache/championsData.json', wikiJson, (err) => {
+	fs.writeFile(CHAMPION_DATA_JSON_PATH, wikiJson, (err) => {
 		if (err) throw err;
 		console.log('Champion data saved!');
+		divideJson("champions", CHAMPION_DATA_JSON_PATH)
 	});
 
 }
