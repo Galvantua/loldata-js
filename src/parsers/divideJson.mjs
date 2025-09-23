@@ -10,7 +10,7 @@ const divideJson = (folder, path) => {
 			const element = data[key];
 			fs.writeFile(`../outputCache/${folder}/${key}.json`, JSON.stringify(element, null, 2), (err) => {
 				if (err) throw err;
-				console.log(`Saved ${key}.json`);
+				//console.log(`Saved ${key}.json`);
 			});
 		}
 	}
